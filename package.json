@@ -1,0 +1,11 @@
+{
+  "name": "outlines",
+  "version": "1.0.0",
+  "description": "a portfolio template contributed repository",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Md Saud Ali",
+  "license": "ISC"
+}
