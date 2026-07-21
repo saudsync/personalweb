@@ -8,19 +8,22 @@
   font-family: "Roboto Mono", monospace;
   box-sizing: border-box;
 
-  /* warm "paper & ink" palette */
-  --primary-color: #2e2a22;   /* deep espresso ink */
-  --secondary-color: #8a5a3f; /* clay brown */
-  --accent-1: #c9a15a;        /* muted gold */
-  --accent-2: #f6f1e7;        /* warm cream */
+  /* minimalist "ink & mocha" palette — no red / green / blue */
+  --primary-color: #2b2926;   /* graphite ink */
+  --secondary-color: #75685c; /* warm taupe */
+  --accent-1: #b4966a;        /* soft antique gold */
+  --accent-2: #f6f2ea;        /* ivory */
 
-  --paper: #f6f1e7;
-  --paper-shadow: #e7dcc7;
-  --sage: #7c8a6b;
-  --clay: #a15c3e;
+  --paper: #faf7f2;
+  --paper-shadow: #e7e0d4;
+  --sage: #8a8177;            /* neutral warm grey */
+  --clay: #8c765f;            /* muted mocha */
 
-  --neutral-1: black;
-  --neutral-2: #fbf8f2;
+  --neutral-1: #1c1b19;
+  --neutral-2: #fbf9f5;
+
+  --grid-line: rgba(43, 41, 38, 0.07);
+  --petal: #cbb79c;
 }
 
 .font-serif {
@@ -218,6 +221,21 @@ section {
   box-shadow: 6px 6px 0px var(--secondary-color);
 }
 
+/* PROFILE */
+.profile-section {
+  padding: 3.5rem 1rem;
+  background-color: var(--neutral-2);
+  background-image: linear-gradient(var(--grid-line) 1px, transparent 1px),
+    linear-gradient(90deg, var(--grid-line) 1px, transparent 1px);
+  background-size: 28px 28px;
+  background-position: center;
+  border-bottom: 1px solid var(--paper-shadow);
+}
+
+.profile-pic {
+  box-shadow: 0 0 0 6px var(--neutral-2), 0 0 0 7px var(--paper-shadow), 0 18px 30px -16px rgba(43, 41, 38, 0.4);
+}
+
 /* ABOUT */
 
 #about {
@@ -380,8 +398,12 @@ section {
   align-items: center;
   animation: fade-in 500ms linear forwards;
   background-color: var(--paper);
-  border-top: 4px solid var(--secondary-color);
-  border-bottom: 4px solid var(--secondary-color);
+  background-image: linear-gradient(rgba(250, 247, 242, 0.9), rgba(250, 247, 242, 0.9)),
+    url("assets/images/petals-bg-flowers.jpg");
+  background-size: cover;
+  background-position: top center;
+  border-top: 1px solid var(--paper-shadow);
+  border-bottom: 1px solid var(--paper-shadow);
 }
 
 .events-container {
@@ -417,58 +439,30 @@ section {
   padding: 1rem 0 2.5rem;
 }
 
-/* each event is a torn sheet of note paper, pinned with washi tape */
+/* simple, clean container — flower art faded into the background */
 .event-card {
   position: relative;
+  overflow: hidden;
+  border-radius: 14px;
+  border: 1px solid var(--paper-shadow);
   background-color: var(--neutral-2);
-  padding: 2rem 1.5rem 1.5rem;
-  box-shadow: 0 14px 24px -12px rgba(46, 42, 34, 0.35), 6px 6px 0px var(--paper-shadow);
-  transform: rotate(var(--tilt, -1.5deg));
-  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out;
+  background-image: linear-gradient(rgba(250, 247, 242, 0.94), rgba(250, 247, 242, 0.94)),
+    url("assets/images/petals-bg-flowers.jpg");
+  background-size: cover;
+  background-position: top center;
+  padding: 1.75rem 1.5rem;
+  box-shadow: 0 10px 24px -16px rgba(43, 41, 38, 0.25);
+  transition: transform 250ms ease-in-out, box-shadow 250ms ease-in-out, border-color 250ms ease-in-out;
 }
 
 .event-card:hover {
-  transform: rotate(0deg) translateY(-4px);
-  box-shadow: 0 20px 30px -14px rgba(46, 42, 34, 0.4), 6px 6px 0px var(--paper-shadow);
+  transform: translateY(-4px);
+  border-color: var(--accent-1);
+  box-shadow: 0 18px 30px -18px rgba(43, 41, 38, 0.35);
 }
 
-.event-card:nth-child(1) { --tilt: -2deg; }
-.event-card:nth-child(2) { --tilt: 1.5deg; }
-.event-card:nth-child(3) { --tilt: -1deg; }
-.event-card:nth-child(4) { --tilt: 2deg; }
-.event-card:nth-child(5) { --tilt: -1.5deg; }
-
-/* torn paper top edge */
-.event-card::after {
-  content: "";
-  position: absolute;
-  top: -1px;
-  left: 0;
-  right: 0;
-  height: 10px;
-  background:
-    linear-gradient(135deg, var(--neutral-2) 50%, transparent 50%) 0 0 / 14px 14px repeat-x,
-    linear-gradient(225deg, var(--neutral-2) 50%, transparent 50%) 7px 0 / 14px 14px repeat-x;
-  transform: translateY(-9px);
-}
-
-/* washi tape */
 .event-tape {
-  position: absolute;
-  top: -12px;
-  left: 50%;
-  transform: translateX(-50%) rotate(-3deg);
-  width: 64px;
-  height: 24px;
-  background: repeating-linear-gradient(
-    -45deg,
-    var(--accent-1),
-    var(--accent-1) 6px,
-    #d9b673 6px,
-    #d9b673 12px
-  );
-  opacity: 0.85;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  display: none;
 }
 
 .event-kind {
@@ -811,3 +805,60 @@ footer {
     opacity: 1;
   }
     }
+
+/* ambient falling petals */
+.petal-field {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  overflow: hidden;
+  z-index: 9998;
+}
+
+.petal {
+  position: absolute;
+  top: -5vh;
+  width: 10px;
+  height: 10px;
+  background: var(--petal);
+  opacity: 0.55;
+  border-radius: 60% 0 60% 0;
+  animation-name: petal-fall, petal-sway;
+  animation-timing-function: linear, ease-in-out;
+  animation-iteration-count: infinite, infinite;
+}
+
+@keyframes petal-fall {
+  0% {
+    top: -5vh;
+    opacity: 0;
+  }
+  8% {
+    opacity: 0.6;
+  }
+  92% {
+    opacity: 0.5;
+  }
+  100% {
+    top: 105vh;
+    opacity: 0;
+  }
+}
+
+@keyframes petal-sway {
+  0%,
+  100% {
+    transform: translateX(0) rotate(0deg);
+  }
+  50% {
+    transform: translateX(40px) rotate(180deg);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .petal-field {
+    display: none;
+  }
+}
