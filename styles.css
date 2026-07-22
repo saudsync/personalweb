@@ -546,6 +546,128 @@ section {
   padding: 2px 22px;
 }
 
+/* Archive thoughts button */
+.archive-button-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: 0.5rem;
+}
+
+.archive-button {
+  display: inline-block;
+  font-family: "Fraunces", serif;
+  font-size: 15px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: var(--neutral-2);
+  background-color: var(--primary-color);
+  padding: 0.85em 2em;
+  border-radius: 999px;
+  border: 1px solid var(--primary-color);
+  box-shadow: 4px 4px 0px var(--accent-1);
+  transition: 250ms ease-in-out;
+}
+
+.archive-button:hover {
+  transform: translateY(-2px);
+  background-color: var(--accent-1);
+  border-color: var(--accent-1);
+  box-shadow: 6px 6px 0px var(--secondary-color);
+}
+
+/* ===== Archive page: quote grid ===== */
+#quote-archive {
+  padding: 3rem 2rem 4rem;
+  margin-top: 36px;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--paper);
+  background-image: linear-gradient(rgba(250, 247, 242, 0.9), rgba(250, 247, 242, 0.9)),
+    url("assets/images/petals-bg-flowers.jpg");
+  background-size: cover;
+  background-position: top center;
+  min-height: 70vh;
+}
+
+.archive-container {
+  width: 90%;
+  max-width: 900px;
+  z-index: 999;
+}
+
+.archive-intro {
+  text-align: center;
+  margin-bottom: 2.5rem;
+}
+
+.archive-intro > h2 {
+  font-family: "Fraunces", serif;
+  font-size: 2.2rem;
+  color: var(--primary-color);
+}
+
+.archive-intro > p {
+  font-size: 13px;
+  color: var(--secondary-color);
+  margin-top: 6px;
+}
+
+.back-home-link {
+  display: inline-block;
+  font-family: "Caveat", cursive;
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--clay);
+  border-bottom: 1px solid var(--clay);
+  margin-bottom: 2rem;
+}
+
+.back-home-link:hover {
+  color: var(--sage);
+  border-color: var(--sage);
+}
+
+.quote-list {
+  display: flex;
+  flex-direction: column;
+  gap: 1.75rem;
+}
+
+.quote-card {
+  position: relative;
+  border-radius: 14px;
+  border: 1px solid var(--paper-shadow);
+  background-color: var(--neutral-2);
+  padding: 2rem 1.75rem 1.75rem;
+  box-shadow: 0 10px 24px -16px rgba(43, 41, 38, 0.25);
+  animation: fade-in 400ms ease-in forwards;
+}
+
+.quote-mark {
+  font-family: "Fraunces", serif;
+  font-size: 2.6rem;
+  line-height: 1;
+  color: var(--accent-1);
+  opacity: 0.65;
+  display: block;
+  margin-bottom: 0.25rem;
+}
+
+.quote-text {
+  font-family: "Fraunces", serif;
+  font-size: 18px;
+  line-height: 1.7;
+  color: var(--primary-color);
+  white-space: pre-line;
+}
+
+.archive-status {
+  text-align: center;
+  font-size: 13px;
+  color: var(--secondary-color);
+  padding: 2rem 0;
+}
+
 
 #contact {
   padding: 2rem;

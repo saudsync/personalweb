@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <link rel="stylesheet" type="text/css" href="./styles.css" />
+
+    <script src="script.js" defer></script>
+    <script src="archive.js" defer></script>
+    <title>Archive Thoughts — PersonalWeb</title>
+    <style>
+      .avatar-logo {
+        width: 50px;
+        height: 50px;
+        border-radius: 50%;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="petal-field" id="petal-field" aria-hidden="true"></div>
+
+    <header>
+      <nav class="navbar-nav">
+        <div class="nav-logo">
+          <h1>
+            <img
+              src="https://avatars.githubusercontent.com/u/111742012?v=4"
+              alt="avatar"
+              class="avatar-logo"
+            />
+          </h1>
+        </div>
+
+        <button
+          class="mobile-nav-toggle"
+          aria-controls="primary-nav"
+          aria-expanded="false"
+        ></button>
+
+        <ul id="primary-nav" class="primary-nav" data-visible="false">
+          <li>
+            <a class="nav-link" href="index.html#events">Home</a>
+          </li>
+          <li>
+            <a class="nav-link" href="https://whatsapp.com/channel/0029Vafn4i26LwHhNNW9qa0j">Let's talk</a>
+          </li>
+          <li>
+            <a class="nav-link" href="index.html#contact">Contact</a>
+          </li>
+        </ul>
+      </nav>
+    </header>
+
+    <main>
+      <section id="quote-archive">
+        <div class="archive-container">
+          <div class="archive-intro">
+            <h2>archive of thoughts</h2>
+            <p>a quiet folder of everything written so far</p>
+          </div>
+
+          <a href="index.html" class="back-home-link">‹ back home</a>
+
+          <p class="archive-status" id="archive-status">loading thoughts…</p>
+
+          <div class="quote-list" id="quote-list"></div>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <div class="footer-content">
+        Made with ❤️ by someone who loves you endlessly.
+        <a href="https://saudsync.github.io/personalweb/" target="_blank">╰┈➤</a>
+      </div>
+    </footer>
+  </body>
+</html>
